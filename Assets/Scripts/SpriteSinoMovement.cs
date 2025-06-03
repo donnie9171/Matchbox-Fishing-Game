@@ -17,6 +17,6 @@ public class SpriteSinoMovement : MonoBehaviour
     void Update()
     {
         float newY = startPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
-        transform.position = new Vector3(startPosition.x, newY, startPosition.z);
+        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 }

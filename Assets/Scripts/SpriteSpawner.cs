@@ -25,9 +25,8 @@ public class SpriteSpawner : MonoBehaviour
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            float randomY = Random.Range(minY, maxY);
-            Vector3 spawnPos = new Vector3(rightSpawnX, randomY, 0f);
             int prefabIndex = Random.Range(0, spritePrefabs.Length);
+            Vector3 spawnPos = new Vector3(rightSpawnX, spritePrefabs[prefabIndex].transform.position.y, 0f);
             sprites[i] = Instantiate(spritePrefabs[prefabIndex], spawnPos, Quaternion.identity, transform);
             yield return new WaitForSeconds(spawnDelay);
         }
@@ -45,11 +44,10 @@ public class SpriteSpawner : MonoBehaviour
             // 超過左邊界就重設到右側，Y隨機，並隨機換一個預製物
             if (sprites[i].transform.position.x < leftBoundary)
             {
-                float randomY = Random.Range(minY, maxY);
                 int prefabIndex = Random.Range(0, spritePrefabs.Length);
 
                 Destroy(sprites[i]);
-                sprites[i] = Instantiate(spritePrefabs[prefabIndex], new Vector3(rightSpawnX, randomY, 0f), Quaternion.identity, transform);
+                sprites[i] = Instantiate(spritePrefabs[prefabIndex], new Vector3(rightSpawnX, spritePrefabs[prefabIndex].transform.position.y, 0f), Quaternion.identity, transform);
             }
         }
     }

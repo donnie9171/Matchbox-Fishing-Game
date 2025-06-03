@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
     // called by Unity's physics system at fixed intervals
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("Move called with context: " + context);
+        //Debug.Log("Move called with context: " + context);
 
         // Fix for CS0019: Convert Axis to float and use it to scale Vector2.up
         float axisValue =context.ReadValue<float>();
