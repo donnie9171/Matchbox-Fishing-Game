@@ -11,7 +11,9 @@ public class CanvasManager : MonoBehaviour
 
     public void Init()
     {
-        ActivateCanvas(0);
+        canvasPrefab.SetActive(false);
+        canvasPrefab2.SetActive(false);
+        canvasPrefab3.SetActive(false);
     }
 
     public void GameOver()
@@ -29,10 +31,6 @@ public class CanvasManager : MonoBehaviour
         ActivateCanvas(0);
     }
 
-    void Start()
-    {
-        Init();
-    }   
 
     public void ActivateCanvas(int index)
     {
