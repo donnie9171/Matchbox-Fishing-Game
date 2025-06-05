@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class TimingBarController : MonoBehaviour
     public RectTransform movingPoint;   // The RectTransform of the moving point
     public float speed = 2f;
     public AnimationCurve curve;// Speed of the moving point
+
+    public FishfightGameManager fishfightGameManager; // Reference to the FishfightGameManager
 
     private float barWidth;
     private float halfBarWidth;
@@ -43,7 +46,7 @@ public class TimingBarController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 stopped = true;
-                CheckSuccess();
+                CheckTension();
                 ResetPoint();
             }
         }
@@ -59,24 +62,18 @@ public class TimingBarController : MonoBehaviour
 
     void ResetPoint()
     {
-        movingPoint.anchoredPosition = new Vector2(-halfBarWidth, 0);
-        movingRight = true;
+        // 隨機決定起始方向
+        movingRight = Random.value > 0.5f;
+        // 隨機決定起始位置（在 bar 內）
+        float randomX = Random.Range(-halfBarWidth, halfBarWidth);
+        movingPoint.anchoredPosition = new Vector2(randomX, 0);
         stopped = false;
     }
 
-    void CheckSuccess()
+    void CheckTension()
     {
         // You can define your 'success area' here (e.g., within 10 units of center)
-        float distance = Mathf.Abs(movingPoint.anchoredPosition.x);
-        Debug.Log("Distance from center: " + distance);
-
-        if (distance < 400f) // <--- Adjust as needed
-        {
-            Debug.Log("Great timing!");
-        }
-        else
-        {
-            Debug.Log("Try again!");
-        }
+        float distanceRatio = 1 - (Mathf.Abs(movingPoint.anchoredPosition.x)/ halfBarWidth);
+        fishfightGameManager.ReduceTension(curve.Evaluate(distanceRatio)); // Use the curve to evaluate the tension reduction based on distance from center
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHookTrigger : MonoBehaviour
 {
-    public LifeCountList hookLeftUI;
+    
     public PlayerManager playerManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,7 +40,7 @@ public class PlayerHookTrigger : MonoBehaviour
             Debug.Log("Hit");
             playerManager.takedamage(); // ©I¥s PlayerManager ªº takedamage ¤èªk
             int currentLifeCount = playerManager.currentlifeCount;
-            hookLeftUI.SetLifeCount(currentLifeCount, playerManager.maxlifeCount);
+            
         }
     }
 }

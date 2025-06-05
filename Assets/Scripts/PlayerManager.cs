@@ -10,6 +10,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject playerhookRef;
     private CanvasManager canvasManager; // CanvasManager 的實例
     public SpriteSpawner spriteSpawner;
+    private LifeCountList lifeCountList; // 用於顯示生命數量的 UI
+
+    public GameObject fishfightManager;
 
     public int currentFishCount = 0; // 當前魚的數量
     public int currentlifeCount = 3; 
@@ -22,9 +25,11 @@ public class PlayerManager : MonoBehaviour
         isGameOver = false; // 初始化遊戲狀態
 
         currentlifeCount = maxlifeCount; // 初始化當前生命數量
-        LifeCountList lifeCountList = canvasManagerRef.GetComponentInChildren<LifeCountList>();
+        lifeCountList = canvasManagerRef.GetComponentInChildren<LifeCountList>();
         lifeCountList.PopulateUIList(maxlifeCount); // 設置生命數量UI
         lifeCountList.SetLifeCount(currentlifeCount, maxlifeCount); // 初始化生命數量UI顯示
+
+        fishfightManager.SetActive(false); // 確保魚戰鬥管理器初始為不活動狀態
 
         spriteSpawner.StartSpawningObstacles(); // 開始生成障礙物
     }
@@ -32,6 +37,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (isGameOver) return; // 如果遊戲已經結束，則不處理傷害
         currentlifeCount--; // 減少生命數量
+        lifeCountList.SetLifeCount(currentlifeCount, maxlifeCount);
         if (currentlifeCount <= 0)
         {
             currentlifeCount = 0;
@@ -49,6 +55,17 @@ public class PlayerManager : MonoBehaviour
 
         isFightingWithFish = true; // 設置正在與魚戰鬥的狀態
         canvasManager.StartFight(); // 呼叫 CanvasManager 的 StartFight 方法
+        fishfightManager.SetActive(true); // 啟用魚戰鬥管理器
+    }
 
+    public void OnFishFightExit()
+    {
+        if (!isFightingWithFish) return; // 如果沒有在與魚戰鬥，則不處理
+        if(currentlifeCount <= 0) return; // 如果生命數量小於等於0，則不處理
+        spriteSpawner.ResumeSpawning();
+        fishfightManager.SetActive(false);
+        playerhookRef.SetActive(true); // 顯示魚鉤
+        isFightingWithFish = false; // 重置正在與魚戰鬥的狀態
+        canvasManager.ResetGame(); // 呼叫 CanvasManager 的 ResetGame 方法
     }
 }
