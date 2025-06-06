@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: 04090207712fb4efbbb5c2b5efc16049
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7918371248737834043
+    second: colored sprites_0
+  - first:
+      213: 7846234339222623650
+    second: colored sprites_1
+  - first:
+      213: 3909892910177556189
+    second: colored sprites_2
+  - first:
+      213: -242588881884314937
+    second: colored sprites_3
+  - first:
+      213: -8345917012557073785
+    second: colored sprites_4
+  - first:
+      213: -3591724307862066482
+    second: colored sprites_5
+  - first:
+      213: 3584772499964215626
+    second: colored sprites_6
+  - first:
+      213: -1236949384004726318
+    second: colored sprites_7
+  - first:
+      213: -8277850405002818062
+    second: colored sprites_8
+  - first:
+      213: 4103600175837433083
+    second: colored sprites_9
+  - first:
+      213: 7493493802848495565
+    second: colored sprites_10
+  - first:
+      213: -9128276196876077145
+    second: colored sprites_11
+  - first:
+      213: 713645644432099109
+    second: colored sprites_12
+  - first:
+      213: 8034698419571560445
+    second: colored sprites_13
+  - first:
+      213: 1345753629772062296
+    second: colored sprites_14
+  - first:
+      213: 7775321745654456501
+    second: colored sprites_15
+  - first:
+      213: 1698163488049651992
+    second: colored sprites_16
+  - first:
+      213: 7520380793418246665
+    second: colored sprites_17
+  - first:
+      213: -8396783632711681147
+    second: colored sprites_18
+  - first:
+      213: -94824396805644056
+    second: colored sprites_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: colored sprites_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1116
+        width: 442
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b345fa882b4b3ed60800000000000000
+      internalID: 7918371248737834043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_1
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1105
+        width: 456
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a516d57f8c63ec60800000000000000
+      internalID: 7846234339222623650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_2
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 1118
+        width: 480
+        height: 418
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd693f4e2eab24630800000000000000
+      internalID: 3909892910177556189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_3
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 1086
+        width: 615
+        height: 463
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c283dc72b622acf0800000000000000
+      internalID: -242588881884314937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_4
+      rect:
+        serializedVersion: 2
+        x: 2901
+        y: 0
+        width: 325
+        height: 1155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78275a512b85d2c80800000000000000
+      internalID: -8345917012557073785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_5
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 838
+        width: 505
+        height: 760
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecaeeb295c1a72ec0800000000000000
+      internalID: -3591724307862066482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_6
+      rect:
+        serializedVersion: 2
+        x: 3836
+        y: 542
+        width: 484
+        height: 1026
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41c4f4889bafb130800000000000000
+      internalID: 3584772499964215626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_7
+      rect:
+        serializedVersion: 2
+        x: 2154
+        y: 354
+        width: 117
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d19241c61975dee0800000000000000
+      internalID: -1236949384004726318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_8
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 68
+        width: 957
+        height: 685
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdcbf12aea2f1d80800000000000000
+      internalID: -8277850405002818062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_9
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 164
+        width: 344
+        height: 754
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc450d3e9ae2f830800000000000000
+      internalID: 4103600175837433083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_10
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 134
+        width: 538
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7206559ec3ef760800000000000000
+      internalID: 7493493802848495565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_11
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 390
+        width: 218
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a73c81a929d15180800000000000000
+      internalID: -9128276196876077145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_12
+      rect:
+        serializedVersion: 2
+        x: 2178
+        y: 623
+        width: 72
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52741ebbee067e900800000000000000
+      internalID: 713645644432099109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_13
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 59
+        width: 154
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff84f794abf08f60800000000000000
+      internalID: 8034698419571560445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_14
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 0
+        width: 315
+        height: 627
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e91c1dbc31da210800000000000000
+      internalID: 1345753629772062296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colored sprites_15
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 53
+        width: 167
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0aa18aeed77eb60800000000000000
+      internalID: 7775321745654456501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5a411263f01cc4607b0d6e13955122de
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      colored sprites_0: 7918371248737834043
+      colored sprites_1: 7846234339222623650
+      colored sprites_10: 7493493802848495565
+      colored sprites_11: -9128276196876077145
+      colored sprites_12: 713645644432099109
+      colored sprites_13: 8034698419571560445
+      colored sprites_14: 1345753629772062296
+      colored sprites_15: 7775321745654456501
+      colored sprites_2: 3909892910177556189
+      colored sprites_3: -242588881884314937
+      colored sprites_4: -8345917012557073785
+      colored sprites_5: -3591724307862066482
+      colored sprites_6: 3584772499964215626
+      colored sprites_7: -1236949384004726318
+      colored sprites_8: -8277850405002818062
+      colored sprites_9: 4103600175837433083
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
