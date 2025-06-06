@@ -14,6 +14,7 @@ public class SpriteSpawner : MonoBehaviour
     public float spawnDelay = 2f;        // 每個物件生成的延遲（秒）
 
     public bool isPaused = false; // 是否暫停生成和移動
+    public bool isGameOver = false;
 
     private GameObject[] sprites;
 
@@ -42,7 +43,8 @@ public class SpriteSpawner : MonoBehaviour
 
     void Update()
     {
-        if(isPaused) return; // 如果暫停，則不執行更新邏輯
+        if(isPaused || isGameOver) return; // 如果暫停，則不執行更新邏輯
+        
         for (int i = 0; i < sprites.Length; i++)
         {
             if (sprites[i] == null) continue;
@@ -70,15 +72,15 @@ public class SpriteSpawner : MonoBehaviour
         }
     }
 
-    public void Respawnfish(GameObject fishPrefab)
+    public void Respawnfish()
     {
         if (isPaused) return; // 如果暫停，則不執行重生邏輯
         
         // 隨機生成魚的Y座標
         Vector3 spawnPos = new Vector3(rightSpawnX, Random.Range(minY, maxY), 0f);
-        GameObject newFish = Instantiate(fishPrefab, spawnPos, Quaternion.identity, transform);
+        GameObject newFish = Instantiate(spritePrefabs[spritePrefabs.Length - 1], spawnPos, Quaternion.identity, transform);
         
-        sprites[spritePrefabs.Length - 1] = newFish;
+        sprites[sprites.Length - 1] = newFish;
         
     }
 

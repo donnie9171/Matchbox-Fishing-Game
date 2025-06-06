@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class FishBossState : MonoBehaviour
 {
-    private enum FishState { Normal, Angry, Faint }
+    public enum FishState { Normal, Angry, Faint }
 
     public FishSpriteController fishSpriteController; // 指定 FishSpriteController
     public FishfightGameManager fishfightGameManager; // 指定 FishfightGameManager
 
-    private FishState currentState = FishState.Normal;
+    public FishState currentState = FishState.Normal;
     private float stateTimer = 0f;
     private float faintDuration = 5f;
     private float nextStateDuration = 0f;

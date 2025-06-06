@@ -20,12 +20,10 @@ public class PlayerControl : MonoBehaviour
     }
 
     // called by Unity's physics system at fixed intervals
-    public void Move(InputAction.CallbackContext context)
+    public void Move(float input)
     {
-        //Debug.Log("Move called with context: " + context);
-
-        // Fix for CS0019: Convert Axis to float and use it to scale Vector2.up
-        float axisValue =context.ReadValue<float>();
+        
+        float axisValue = input;
         Vector2 direction = Vector2.up * axisValue;
 
         Vector2 newPosition = rb.position + direction * moveSpeed * Time.fixedDeltaTime;

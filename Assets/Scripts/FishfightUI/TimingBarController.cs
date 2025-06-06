@@ -43,7 +43,7 @@ public class TimingBarController : MonoBehaviour
             }
 
             // Stop on click
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0))
             {
                 stopped = true;
                 CheckTension();
