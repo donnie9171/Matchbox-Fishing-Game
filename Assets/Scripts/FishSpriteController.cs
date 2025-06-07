@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FishSpriteController : MonoBehaviour
 {
     public GameObject fishNormalSprite; // Normal fish sprite
     public GameObject fishAngrySprite;  // Angry fish sprite
     public GameObject fishFaintSprite;  // Happy fish sprite
+    public Sprite[] fishCostumes;
+    public Image baseImage; 
+
 
     public void SetNormalSprite()
     {
@@ -24,4 +28,8 @@ public class FishSpriteController : MonoBehaviour
         fishAngrySprite.SetActive(false);
         fishFaintSprite.SetActive(true);
     }   
+
+    public void SetFishCostume(int fish) {
+        baseImage.sprite = fishCostumes[fish];
+    }
 }

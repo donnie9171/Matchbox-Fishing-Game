@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
 
     public int currentFishCount = 0; // 當前魚的數量
     public int currentlifeCount = 3; 
+    public FishManagerScript fishManager; // FishManagerScript 的實例
+    public FishCostumeController fishCostumeController; // FishCostumeController 的實例
 
     void Start()
     {
@@ -59,6 +61,7 @@ public class PlayerManager : MonoBehaviour
         isFightingWithFish = true; // 設置正在與魚戰鬥的狀態
         canvasManager.StartFight(); // 呼叫 CanvasManager 的 StartFight 方法
         fishfightManager.SetActive(true); // 啟用魚戰鬥管理器
+        fishCostumeController.ChangeCostume(fishManager.GetCurrentFish());
     }
 
     public void OnFishFightExit()
