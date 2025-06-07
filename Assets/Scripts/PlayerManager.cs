@@ -80,6 +80,13 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(WaitAndExitFishFight());
     }
 
+    public void FishGotAway()
+    {
+        if (isGameOver) return; // 如果遊戲已經結束，則不處理魚逃脫
+        canvasManager.FishGotAway(); // 呼叫 CanvasManager 的 FishGotAway 方法
+        StartCoroutine(WaitAndExitFishFight());
+    }
+
     private System.Collections.IEnumerator WaitAndExitFishFight()
     {
         yield return new WaitForSeconds(5f);

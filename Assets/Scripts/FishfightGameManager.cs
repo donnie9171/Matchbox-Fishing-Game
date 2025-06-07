@@ -46,7 +46,7 @@ public class FishfightGameManager : MonoBehaviour
             currentTension = 0f; // Reset tension for simplicity in this example
             PlayerManager playerManagerClass = playerManager.GetComponent<PlayerManager>();
             playerManagerClass.takedamage(); // Call the damage method on the player manager
-            playerManagerClass.OnFishFightExit();
+            playerManagerClass.FishGotAway();
 
         }
         

@@ -75,13 +75,16 @@ public class SpriteSpawner : MonoBehaviour
     public void Respawnfish()
     {
         if (isPaused) return; // 如果暫停，則不執行重生邏輯
-        
+        StartCoroutine(RespawnFishWithDelay());
+    }
+
+    private IEnumerator RespawnFishWithDelay()
+    {
+        yield return new WaitForSeconds(2f);
         // 隨機生成魚的Y座標
         Vector3 spawnPos = new Vector3(rightSpawnX, Random.Range(minY, maxY), 0f);
         GameObject newFish = Instantiate(spritePrefabs[spritePrefabs.Length - 1], spawnPos, Quaternion.identity, transform);
-        
         sprites[sprites.Length - 1] = newFish;
-        
     }
 
     private void HideAllObjects()

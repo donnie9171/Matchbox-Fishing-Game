@@ -8,6 +8,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject canvasPrefab2;
     public GameObject canvasPrefab3;
     public GameObject FishCatchedCanvas;
+    public GameObject FishGotAwayCanvas;
 
 
     public void Init()
@@ -15,7 +16,8 @@ public class CanvasManager : MonoBehaviour
         canvasPrefab.SetActive(false);
         canvasPrefab2.SetActive(false);
         canvasPrefab3.SetActive(false);
-        canvasPrefab3.SetActive(true);
+        FishCatchedCanvas.SetActive(false);
+        FishGotAwayCanvas.SetActive(false);
     }
 
     public void GameOver()
@@ -38,12 +40,17 @@ public class CanvasManager : MonoBehaviour
         ActivateCanvas(3);
     }
 
-
-    public void ActivateCanvas(int index)
+    public void FishGotAway()
     {
-        if(index < 0 || index > 3)
+        ActivateCanvas(4);
+    }
+
+
+    private void ActivateCanvas(int index)
+    {
+        if(index < 0 || index > 4)
         {
-            Debug.LogError("Index out of range. Must be 0, 1, or 2.");
+            Debug.LogError("Index out of range. Must be 0, 1, 2, 3, 4");
             return;
         }
         // Deactivate all canvases first
@@ -51,6 +58,7 @@ public class CanvasManager : MonoBehaviour
         canvasPrefab2.SetActive(false);
         canvasPrefab3.SetActive(false);
         FishCatchedCanvas.SetActive(false);
+        FishGotAwayCanvas.SetActive(false);
         // Activate the selected canvas
         switch (index)
         {
@@ -65,6 +73,9 @@ public class CanvasManager : MonoBehaviour
                 break;
             case 3:
                 FishCatchedCanvas.SetActive(true);
+                break;
+            case 4:
+                FishGotAwayCanvas.SetActive(true);
                 break;
         }
     }
