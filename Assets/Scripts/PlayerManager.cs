@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -80,9 +81,29 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(WaitAndExitFishFight());
     }
 
+    public void FishGotAway()
+    {
+        if (isGameOver) return; // 如果遊戲已經結束，則不處理魚逃脫
+        if(currentlifeCount == 1)
+        {
+            canvasManager.FishGotAway();
+            StartCoroutine(GameOver());
+            return; 
+        }
+        takedamage();
+        canvasManager.FishGotAway(); // 呼叫 CanvasManager 的 FishGotAway 方法
+        StartCoroutine(WaitAndExitFishFight());
+    }
+
     private System.Collections.IEnumerator WaitAndExitFishFight()
     {
         yield return new WaitForSeconds(5f);
         OnFishFightExit();
+    }
+
+    private System.Collections.IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(5f);
+        takedamage();
     }
 }

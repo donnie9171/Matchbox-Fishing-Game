@@ -45,8 +45,8 @@ public class FishfightGameManager : MonoBehaviour
             // Handle game over logic here, e.g., reset game or show game over screen
             currentTension = 0f; // Reset tension for simplicity in this example
             PlayerManager playerManagerClass = playerManager.GetComponent<PlayerManager>();
-            playerManagerClass.takedamage(); // Call the damage method on the player manager
-            playerManagerClass.OnFishFightExit();
+            
+            playerManagerClass.FishGotAway();
 
         }
         
