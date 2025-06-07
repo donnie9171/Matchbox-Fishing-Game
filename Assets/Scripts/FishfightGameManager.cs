@@ -9,6 +9,9 @@ public class FishfightGameManager : MonoBehaviour
     public GameObject playerManager; // Reference to the player manager
     public GameObject fishPulling; // Reference to the fish pulling function
 
+    public GameObject YankUI;
+    public GameObject HookUI;
+
     public TipsVisual TipsVisual;
     public DepthUIVisual DepthUIVisual;
     public bool isFainted = false; // Flag to check if the fish is fainted
@@ -24,6 +27,7 @@ public class FishfightGameManager : MonoBehaviour
     void OnEnable()
     {
         currentTension = 30f;
+        isFainted = false;
         initialDepth = 50f;
         timer = 0f;
     }
@@ -64,6 +68,16 @@ public class FishfightGameManager : MonoBehaviour
     {
         TipsVisual.IsFainted(isFainted); // Update the tips visual based on fainted state
         DepthUIVisual.UpdateDepth(initialDepth); // Update the depth UI visual
+        if (isFainted)
+        {
+            YankUI.SetActive(false);
+            HookUI.SetActive(true);
+        }
+        else
+        {
+            YankUI.SetActive(true);
+            HookUI.SetActive(false);
+        }
     }
 
     public void ReduceTension(float multiplier)
@@ -74,8 +88,8 @@ public class FishfightGameManager : MonoBehaviour
             currentTension = 0f; // Ensure tension doesn't go below zero
             isFainted = true; // Set fainted flag to true
             fishPulling.SetActive(true); // Activate the fish pulling function
+            
         }
-        Debug.Log("Tension reduced. Current Tension: " + currentTension);
     }
 
     public void fishpulling()
