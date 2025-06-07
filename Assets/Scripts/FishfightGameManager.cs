@@ -17,15 +17,21 @@ public class FishfightGameManager : MonoBehaviour
 
     public float initialDepth = 50f; // Initial depth of the fish
 
+    // 新增 timer 欄位
+    private float timer = 0f;
+
+    // 在 OnEnable 初始化 timer
     void OnEnable()
     {
         currentTension = 30f;
         initialDepth = 50f;
-}
+        timer = 0f;
+    }
 
-
+    // 在 Update 方法中累加 timer
     void Update()
     {
+        timer += Time.deltaTime;
         updateTips();
         if (isFainted)
         {
@@ -33,23 +39,25 @@ public class FishfightGameManager : MonoBehaviour
             {
                 initialDepth = 0f;
                 PlayerManager playerManagerClass = playerManager.GetComponent<PlayerManager>();
-                playerManagerClass.CatchFish();
-
+                playerManagerClass.CatchFish(timer);
             }
             return; // If the fish is fainted, skip tension updates
         }
-         currentTension += tensionGrowthRate * Time.deltaTime; // Increase tension over time
+        currentTension += tensionGrowthRate * Time.deltaTime; // Increase tension over time
         if (currentTension >= maxTension)
         {
             Debug.Log("Game Over: Tension exceeded maximum limit!");
             // Handle game over logic here, e.g., reset game or show game over screen
             currentTension = 0f; // Reset tension for simplicity in this example
             PlayerManager playerManagerClass = playerManager.GetComponent<PlayerManager>();
-            
             playerManagerClass.FishGotAway();
-
         }
-        
+    }
+
+    // 可選：新增一個方法取得 timer
+    public float GetTimer()
+    {
+        return timer;
     }
 
     private void updateTips()

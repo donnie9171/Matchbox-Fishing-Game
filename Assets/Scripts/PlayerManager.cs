@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     private CanvasManager canvasManager; // CanvasManager 的實例
     public SpriteSpawner spriteSpawner;
     private LifeCountList lifeCountList; // 用於顯示生命數量的 UI
+    public GradeOnCatch gradeOnCatch; // 用於顯示捕魚等級的 UI
 
     public GameObject fishfightManager;
 
@@ -73,11 +74,13 @@ public class PlayerManager : MonoBehaviour
         canvasManager.ResetGame(); // 呼叫 CanvasManager 的 ResetGame 方法
     }
 
-    public void CatchFish()
+    public void CatchFish(float timer)
     {
         if (isGameOver) return; // 如果遊戲已經結束，則不處理捕魚
         currentFishCount++; // 增加捕獲的魚數量
+        
         canvasManager.FishCatched(); // 呼叫 CanvasManager 的 FishCatched 方法
+        gradeOnCatch.SetGrade(timer); // 設置捕魚等級
         StartCoroutine(WaitAndExitFishFight());
     }
 
