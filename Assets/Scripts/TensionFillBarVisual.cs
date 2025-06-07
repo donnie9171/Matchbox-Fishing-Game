@@ -6,12 +6,15 @@ public class TensionFillBarVisual : MonoBehaviour
     public FishfightGameManager fishfightGameManager;
     public Image fillImage; // 參考填充圖像，用於更改顏色
 
+    private void Start() {
+        fillImage.color = Color.red;
+    }
 
     // Update is called once per frame
     void Update()
     {
         float tension = fishfightGameManager.currentTension / 100f;
         tensionSlider.value = tension; // 更新張力條的填充比例
-        fillImage.color = Color.Lerp(Color.green, Color.red, tension); // 根據張力變化顏色
+        // fillImage.color = Color.Lerp(Color.green, Color.yellow, tension); // 根據張力變化顏色
     }
 }
