@@ -6,10 +6,6 @@ public class TensionFillBarVisual : MonoBehaviour
     public FishfightGameManager fishfightGameManager;
     public Image fillImage; // 參考填充圖像，用於更改顏色
 
-    private void Start() {
-        fillImage.color = Color.red;
-    }
-
     // Update is called once per frame
     void Update()
     {
