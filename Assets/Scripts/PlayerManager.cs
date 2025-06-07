@@ -3,93 +3,94 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public int maxlifeCount = 3; // 初始生命數量
-    public bool isGameOver; // 遊戲是否結束
-    public bool isFightingWithFish = false; // 是否正在與魚戰鬥
+    public int maxlifeCount = 3; // ???l???R???q
+    public bool isGameOver; // ?C???O?_????
+    public bool isFightingWithFish = false; // ?O?_???b?P??????
 
-    public GameObject canvasManagerRef; // 參考 CanvasManager\
+    public GameObject canvasManagerRef; // ???? CanvasManager\
     public GameObject playerhookRef;
-    private CanvasManager canvasManager; // CanvasManager 的實例
+    private CanvasManager canvasManager; // CanvasManager ??????
     public SpriteSpawner spriteSpawner;
-    private LifeCountList lifeCountList; // 用於顯示生命數量的 UI
-    public GradeOnCatch gradeOnCatch; // 用於顯示捕魚等級的 UI
+    private LifeCountList lifeCountList; // ???????????R???q?? UI
+    public GradeOnCatch gradeOnCatch; // ?????????????????? UI
 
     public GameObject fishfightManager;
 
-    public int currentFishCount = 0; // 當前魚的數量
+    public int currentFishCount = 0; // ???e???????q
     public int currentlifeCount = 3; 
-    public FishManagerScript fishManager; // FishManagerScript 的實例
-    public FishCostumeController fishCostumeController; // FishCostumeController 的實例
+    public FishManagerScript fishManager; // FishManagerScript ??????
+    public fishCostumeUI fishfightCostumeController, catchCostumeController; // FishCostumeController ??????
 
     void Start()
     {
-        canvasManager = canvasManagerRef.GetComponent<CanvasManager>(); // 獲取 CanvasManager 的實例
-        canvasManager.Init(); // 初始化 CanvasManager
-        canvasManager.ResetGame(); // 啟用初始畫布
-        isGameOver = false; // 初始化遊戲狀態
+        canvasManager = canvasManagerRef.GetComponent<CanvasManager>(); // ???? CanvasManager ??????
+        canvasManager.Init(); // ???l?? CanvasManager
+        canvasManager.ResetGame(); // ???????l?e??
+        isGameOver = false; // ???l???C?????A
 
-        currentlifeCount = maxlifeCount; // 初始化當前生命數量
+        currentlifeCount = maxlifeCount; // ???l?????e???R???q
         lifeCountList = canvasManagerRef.GetComponentInChildren<LifeCountList>();
-        lifeCountList.PopulateUIList(maxlifeCount); // 設置生命數量UI
-        lifeCountList.SetLifeCount(currentlifeCount, maxlifeCount); // 初始化生命數量UI顯示
+        lifeCountList.PopulateUIList(maxlifeCount); // ?]?m???R???qUI
+        lifeCountList.SetLifeCount(currentlifeCount, maxlifeCount); // ???l?????R???qUI????
 
-        fishfightManager.SetActive(false); // 確保魚戰鬥管理器初始為不活動狀態
+        fishfightManager.SetActive(false); // ?T?O?????????z?????l???????????A
 
-        spriteSpawner.StartSpawningObstacles(); // 開始生成障礙物
+        spriteSpawner.StartSpawningObstacles(); // ?}?l??????????
     }
     public void takedamage()
     {
-        if (isGameOver) return; // 如果遊戲已經結束，則不處理傷害
-        currentlifeCount--; // 減少生命數量
+        if (isGameOver) return; // ?p?G?C???w?g?????A?h???B?z???`
+        currentlifeCount--; // ???????R???q
         lifeCountList.SetLifeCount(currentlifeCount, maxlifeCount);
         if (currentlifeCount <= 0)
         {
             currentlifeCount = 0;
-            isGameOver = true; // 如果生命數量小於等於0，則遊戲結束
+            isGameOver = true; // ?p?G???R???q?p??????0?A?h?C??????
             Debug.Log("Game Over!");
-            canvasManager.GameOver(); // 呼叫 CanvasManager 的 GameOver 方法
-            spriteSpawner.isGameOver = true; // 停止生成障礙物
+            canvasManager.GameOver(); // ?I?s CanvasManager ?? GameOver ???k
+            spriteSpawner.isGameOver = true; // ??????????????
         }
     }
 
     public void OnFishFightEnter()
     {
-        if (isFightingWithFish) return; // 如果已經在與魚戰鬥，則不處理
+        if (isFightingWithFish) return; // ?p?G?w?g?b?P???????A?h???B?z
         spriteSpawner.PauseSpawning();
-        playerhookRef.SetActive(false); // 隱藏魚鉤
+        playerhookRef.SetActive(false); // ???????_
 
-        isFightingWithFish = true; // 設置正在與魚戰鬥的狀態
-        canvasManager.StartFight(); // 呼叫 CanvasManager 的 StartFight 方法
-        fishfightManager.SetActive(true); // 啟用魚戰鬥管理器
-        fishCostumeController.ChangeCostume(fishManager.GetCurrentFish());
+        isFightingWithFish = true; // ?]?m???b?P???????????A
+        canvasManager.StartFight(); // ?I?s CanvasManager ?? StartFight ???k
+        fishfightManager.SetActive(true); // ?????????????z??
+        fishfightCostumeController.SetFishCostume(fishManager.GetCurrentFish());
+        catchCostumeController.SetFishCostume(fishManager.GetCurrentFish());
     }
 
     public void OnFishFightExit()
     {
-        if (!isFightingWithFish) return; // 如果沒有在與魚戰鬥，則不處理
-        if(currentlifeCount <= 0) return; // 如果生命數量小於等於0，則不處理
+        if (!isFightingWithFish) return; // ?p?G?S???b?P???????A?h???B?z
+        if(currentlifeCount <= 0) return; // ?p?G???R???q?p??????0?A?h???B?z
         spriteSpawner.ResumeSpawning();
         spriteSpawner.Respawnfish();
 
         fishfightManager.SetActive(false);
-        playerhookRef.SetActive(true); // 顯示魚鉤
-        isFightingWithFish = false; // 重置正在與魚戰鬥的狀態
-        canvasManager.ResetGame(); // 呼叫 CanvasManager 的 ResetGame 方法
+        playerhookRef.SetActive(true); // ???????_
+        isFightingWithFish = false; // ???m???b?P???????????A
+        canvasManager.ResetGame(); // ?I?s CanvasManager ?? ResetGame ???k
     }
 
     public void CatchFish(float timer)
     {
-        if (isGameOver) return; // 如果遊戲已經結束，則不處理捕魚
-        currentFishCount++; // 增加捕獲的魚數量
+        if (isGameOver) return; // ?p?G?C???w?g?????A?h???B?z????
+        currentFishCount++; // ?W?[???????????q
         
-        canvasManager.FishCatched(); // 呼叫 CanvasManager 的 FishCatched 方法
-        gradeOnCatch.SetGrade(timer); // 設置捕魚等級
+        canvasManager.FishCatched(); // ?I?s CanvasManager ?? FishCatched ???k
+        gradeOnCatch.SetGrade(timer); // ?]?m????????
         StartCoroutine(WaitAndExitFishFight());
     }
 
     public void FishGotAway()
     {
-        if (isGameOver) return; // 如果遊戲已經結束，則不處理魚逃脫
+        if (isGameOver) return; // ?p?G?C???w?g?????A?h???B?z???k??
         if(currentlifeCount == 1)
         {
             canvasManager.FishGotAway();
@@ -97,7 +98,7 @@ public class PlayerManager : MonoBehaviour
             return; 
         }
         takedamage();
-        canvasManager.FishGotAway(); // 呼叫 CanvasManager 的 FishGotAway 方法
+        canvasManager.FishGotAway(); // ?I?s CanvasManager ?? FishGotAway ???k
         StartCoroutine(WaitAndExitFishFight());
     }
 
