@@ -4,70 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977ae1bb-ce45-4dac-94f1-299804e6312e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Matchbox-Fishing-Game/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Fish.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Fish.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Obstacle.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Obstacle.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/main menu.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/main menu.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/zoe's scene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/zoe's scene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FishCostumeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FishCostumeController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FishManagerScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FishManagerScript.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GradeOnCatch.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GradeOnCatch.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenuController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NewSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/NewSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObstacleController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ObstacleController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ResetGame.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ResetGame.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneTransitionManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/fishCostumeUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/fishCostumeUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/Fish/Untitled_Artwork.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/Fish/Untitled_Artwork.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/Fish/Untitled_Artwork1111.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/Fish/Untitled_Artwork1111.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/Untitled_Artwork.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/Untitled_Artwork.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/bar thing for fishing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/bar thing for fishing.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/blank.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/one bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/one bar.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Fish Crispy SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Fish Crispy SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Fish Crispy.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Fish Crispy.otf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/SuperMario256 SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/SuperMario256 SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/SuperMario256.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/SuperMario256.ttf.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CanvasManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CanvasManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DepthUIVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DepthUIVisual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FishSpriteController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FishSpriteController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FishfightGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FishfightGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FishfightUI/TimingBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FishfightUI/TimingBarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerFishingRodSingnalListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerFishingRodSingnalListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpriteSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpriteSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TensionFillBarVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TensionFillBarVisual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StaticAssets/sprites/colored sprites.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StaticAssets/sprites/colored sprites.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="977ae1bb-ce45-4dac-94f1-299804e6312e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
