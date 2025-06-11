@@ -43,22 +43,18 @@ public class CanvasManager : MonoBehaviour
     public void FishGotAway()
     {
         ActivateCanvas(4);
+
     }
 
 
-    private void ActivateCanvas(int index)
+    public void ActivateCanvas(int index)
     {
         if(index < 0 || index > 4)
         {
-            Debug.LogError("Index out of range. Must be 0, 1, 2, 3, 4");
+            Debug.LogError("Index out of range. Must be 0, 1, or 2.");
             return;
         }
-        // Deactivate all canvases first
-        canvasPrefab.SetActive(false);
-        canvasPrefab2.SetActive(false);
-        canvasPrefab3.SetActive(false);
-        FishCatchedCanvas.SetActive(false);
-        FishGotAwayCanvas.SetActive(false);
+        Init();
         // Activate the selected canvas
         switch (index)
         {

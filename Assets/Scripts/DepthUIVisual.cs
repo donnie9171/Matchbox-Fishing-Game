@@ -4,7 +4,6 @@ using UnityEngine;
 public class DepthUIVisual : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMeshProUGUI;
-
     
     public void UpdateDepth(float depth)
     {

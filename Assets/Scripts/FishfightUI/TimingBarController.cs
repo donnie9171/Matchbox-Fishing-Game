@@ -25,46 +25,45 @@ public class TimingBarController : MonoBehaviour
 
     void Update()
     {
-        if (!stopped)
-        {
-            float move = speed * Time.deltaTime * (movingRight ? 1 : -1);
-            movingPoint.anchoredPosition += new Vector2(move, 0);
+        if (stopped) return;
+        
+        float move = speed * Time.deltaTime * (movingRight ? 1 : -1);
+        movingPoint.anchoredPosition += new Vector2(move, 0);
 
-            // Check bounds
-            if (movingPoint.anchoredPosition.x > halfBarWidth)
-            {
-                movingPoint.anchoredPosition = new Vector2(halfBarWidth, 0);
-                movingRight = false;
-            }
-            else if (movingPoint.anchoredPosition.x < -halfBarWidth)
-            {
-                movingPoint.anchoredPosition = new Vector2(-halfBarWidth, 0);
-                movingRight = true;
-            }
-
-            // Stop on click
-            if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(0))
-            {
-                stopped = true;
-                CheckTension();
-                ResetPoint();
-            }
-        }
-        else
+        // Check bounds
+        if (movingPoint.anchoredPosition.x > halfBarWidth)
         {
-            // Reset if needed (optional)
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                ResetPoint();
-            }
+            movingPoint.anchoredPosition = new Vector2(halfBarWidth, 0);
+            movingRight = false;
         }
+        else if (movingPoint.anchoredPosition.x < -halfBarWidth)
+        {
+            movingPoint.anchoredPosition = new Vector2(-halfBarWidth, 0);
+            movingRight = true;
+        }
+
+        // Stop on click
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Z))
+        {
+            stopped = true;
+            CheckTension();
+            ResetPoint();
+        }
+        // else
+        // {
+        //     // Reset if needed (optional)
+        //     if (Input.GetKeyDown(KeyCode.R))
+        //     {
+        //         ResetPoint();
+        //     }
+        // }
     }
 
     void ResetPoint()
     {
-        // ÀH¾÷¨M©w°_©l¤è¦V
+        // ï¿½Hï¿½ï¿½ï¿½Mï¿½wï¿½_ï¿½lï¿½ï¿½V
         movingRight = Random.value > 0.5f;
-        // ÀH¾÷¨M©w°_©l¦ì¸m¡]¦b bar ¤º¡^
+        // ï¿½Hï¿½ï¿½ï¿½Mï¿½wï¿½_ï¿½lï¿½ï¿½mï¿½]ï¿½b bar ï¿½ï¿½ï¿½^
         float randomX = Random.Range(-halfBarWidth, halfBarWidth);
         movingPoint.anchoredPosition = new Vector2(randomX, 0);
         stopped = false;

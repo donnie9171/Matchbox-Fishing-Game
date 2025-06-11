@@ -17,6 +17,7 @@ public class SpriteSpawner : MonoBehaviour
     public bool isGameOver = false;
 
     private GameObject[] sprites;
+    public FishManagerScript fishManager;
 
     public void StartSpawningObstacles()
     {
@@ -39,6 +40,7 @@ public class SpriteSpawner : MonoBehaviour
         //spwanfish
         Vector3 spawnPos2 = new Vector3(rightSpawnX, Random.Range(minY, maxY), 0f);
         sprites[spawnCount - 1] = Instantiate(spritePrefabs[spritePrefabs.Length - 1], spawnPos2, Quaternion.identity, transform);
+        sprites[spawnCount - 1].GetComponent<FishCostumeController>().ChangeCostume(fishManager.NewFish()); // 每個物件生成的延遲（秒）
     }
 
     void Update()
@@ -57,8 +59,8 @@ public class SpriteSpawner : MonoBehaviour
             {
                 if(sprites[i].CompareTag("Fish"))
                 {
-                    // 如果是魚，則隨機Y座標
-                    sprites[i].transform.position = new Vector3(rightSpawnX, Random.Range(minY, maxY), 0f);
+                    Destroy(sprites[i]);
+                    Respawnfish();
                 }
                 else
                 {
@@ -75,16 +77,15 @@ public class SpriteSpawner : MonoBehaviour
     public void Respawnfish()
     {
         if (isPaused) return; // 如果暫停，則不執行重生邏輯
-        StartCoroutine(RespawnFishWithDelay());
-    }
-
-    private IEnumerator RespawnFishWithDelay()
-    {
-        yield return new WaitForSeconds(2f);
+        
         // 隨機生成魚的Y座標
         Vector3 spawnPos = new Vector3(rightSpawnX, Random.Range(minY, maxY), 0f);
         GameObject newFish = Instantiate(spritePrefabs[spritePrefabs.Length - 1], spawnPos, Quaternion.identity, transform);
+
+        newFish.GetComponent<FishCostumeController>().ChangeCostume(fishManager.NewFish()); // 每個物件生成的延遲（秒）
         sprites[sprites.Length - 1] = newFish;
+
+
     }
 
     private void HideAllObjects()

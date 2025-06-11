@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FishSpriteController : MonoBehaviour
 {
     public GameObject fishNormalSprite; // Normal fish sprite
     public GameObject fishAngrySprite;  // Angry fish sprite
     public GameObject fishFaintSprite;  // Happy fish sprite
+
 
     public void SetNormalSprite()
     {
