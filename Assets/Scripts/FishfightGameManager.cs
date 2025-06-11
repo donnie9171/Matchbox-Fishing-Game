@@ -16,7 +16,7 @@ public class FishfightGameManager : MonoBehaviour
     public DepthUIVisual DepthUIVisual;
     public bool isFainted = false; // Flag to check if the fish is fainted
 
-    float reductionHit = 20f; // Tension reduction on successful hit
+    float reductionHit = 30f; // Tension reduction on successful hit
 
     public float initialDepth = 50f; // Initial depth of the fish
 
