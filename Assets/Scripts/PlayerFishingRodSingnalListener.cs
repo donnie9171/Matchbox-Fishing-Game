@@ -12,30 +12,35 @@ public class PlayerFishingRodSingnalListener : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("Pressed 1");
             SwitchStateForInput(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             Debug.Log("Pressed 2");
             SwitchStateForInput(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Pressed 3");
             SwitchStateForInput(3);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.End))
         {
             Debug.Log("Pressed 4");
             SwitchStateForInput(4);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             Debug.Log("Pressed 5");
             SwitchStateForInput(5);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8)) 
+        {
+            SwitchStateForInput(6);
+
         }
         
         float scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -129,7 +134,7 @@ public class PlayerFishingRodSingnalListener : MonoBehaviour
 
                     return; // Ignore if already in Pressed1 state
                 }
-                if (currentSignalState == FishingRodSignalState.Pressed1)
+                if (currentSignalState == FishingRodSignalState.Pressed6)
                 {
                     playerControl.Move(-1);
                 }
@@ -139,6 +144,23 @@ public class PlayerFishingRodSingnalListener : MonoBehaviour
                     if (fishPullingFunction.IsFainted()) fishPullingFunction.FishPulling();
                 }
                 currentSignalState = FishingRodSignalState.Pressed5;
+                break;
+            case 6:
+                if (currentSignalState == FishingRodSignalState.Pressed6)
+                {
+
+                    return; // Ignore if already in Pressed1 state
+                }
+                if (currentSignalState == FishingRodSignalState.Pressed1)
+                {
+                    playerControl.Move(-1);
+                }
+                else if (currentSignalState == FishingRodSignalState.Pressed5)
+                {
+                    playerControl.Move(1);
+                    if (fishPullingFunction.IsFainted()) fishPullingFunction.FishPulling();
+                }
+                currentSignalState = FishingRodSignalState.Pressed6;
                 break;
             default:
                 currentSignalState = FishingRodSignalState.None;
@@ -154,7 +176,8 @@ public enum FishingRodSignalState
     Pressed2,
     Pressed3,
     Pressed4,
-    Pressed5
+    Pressed5,
+    Pressed6
 }
 
 

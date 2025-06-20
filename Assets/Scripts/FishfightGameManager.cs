@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FishfightGameManager : MonoBehaviour
 {
-    float tensionGrowthRate = 5f; // Rate at which tension grows per second
+    float tensionGrowthRate = 3f; // Rate at which tension grows per second
     public float currentTension { get; private set; } // Current tension level
     float maxTension = 100f; // Maximum tension level before failure
     public GameObject playerManager; // Reference to the player manager
